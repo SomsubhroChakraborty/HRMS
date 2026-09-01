@@ -7,7 +7,7 @@ const app = express();
 const authRoutes = require('./routes/authRoutes');
 const departmentRoutes = require('./routes/departmentRoutes');
 const designationRoutes = require('./routes/designationRoutes');
-
+const employeeRoutes = require('./routes/employeeRoutes');
 // Security
 app.use(helmet());
 
@@ -31,5 +31,5 @@ app.get('/api/health', (req, res) => {
 app.use('/api/auth', authRoutes);
 app.use('/api/departments', departmentRoutes);
 app.use('/api/designations', designationRoutes);
-
+app.use('/api/employees', employeeRoutes);
 module.exports = app;       
