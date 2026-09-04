@@ -29,10 +29,6 @@ const calculateLeaveDays = (startDate, endDate) => {
 };
 
 
-// =====================================================
-// EMPLOYEE - APPLY FOR LEAVE
-// =====================================================
-
 const applyLeave = async (req, res) => {
     try {
 
@@ -178,10 +174,6 @@ const applyLeave = async (req, res) => {
 };
 
 
-// =====================================================
-// EMPLOYEE - MY LEAVE HISTORY
-// =====================================================
-
 const getMyLeaves = async (req, res) => {
     try {
 
@@ -228,10 +220,6 @@ const getMyLeaves = async (req, res) => {
     }
 };
 
-
-// =====================================================
-// ADMIN - GET ALL LEAVES
-// =====================================================
 
 const getAllLeaves = async (req, res) => {
     try {
@@ -317,10 +305,6 @@ const getAllLeaves = async (req, res) => {
 };
 
 
-// =====================================================
-// ADMIN - APPROVE LEAVE
-// =====================================================
-
 const approveLeave = async (req, res) => {
     try {
 
@@ -334,9 +318,7 @@ const approveLeave = async (req, res) => {
 
         const { id } = req.params;
 
-        const {
-            admin_remarks
-        } = req.body;
+        const {admin_remarks} = req.body;
 
 
         const leave = await db('leaves')
@@ -393,11 +375,6 @@ const approveLeave = async (req, res) => {
         });
     }
 };
-
-
-// =====================================================
-// ADMIN - REJECT LEAVE
-// =====================================================
 
 const rejectLeave = async (req, res) => {
     try {
